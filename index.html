@@ -436,7 +436,7 @@
                 ktoré sme s našimi klientmi postavili.
               </p>
               <div class="references-highlight-cont">
-                <a class="references-highlight__brand" href="https://t3works.sk" target="_blank" rel="noopener">
+                <a class="references-highlight__brand" href="https://www.t3works.sk" target="_blank" rel="noopener">
                   <span>Postavené z výstavného systému</span>
                   <img
                     src="images/logo_t3works_header.svg"
@@ -447,7 +447,7 @@
                     decoding="async"
                   />
                 </a>
-                <a class="references-highlight__btn" href="https://t3works.sk" target="_blank" rel="noopener"
+                <a class="references-highlight__btn" href="https://www.t3works.sk/referencie" target="_blank" rel="noopener"
                   >Zobraziť všetky referencie</a
                 >
               </div>
@@ -965,6 +965,21 @@
         });
       });
 
+      const searchBar = document.querySelector(".search-bar");
+
+      if (searchBar) {
+        const toggleSearchFocus = (isFocused) => {
+          document.body.classList.toggle("search-bar-focused", isFocused);
+        };
+
+        searchBar.addEventListener("focusin", () => toggleSearchFocus(true));
+        searchBar.addEventListener("focusout", () => {
+          if (!searchBar.matches(":focus-within")) {
+            toggleSearchFocus(false);
+          }
+        });
+      }
+
       const supportsWebPConversion = (() => {
         const canvas = document.createElement("canvas");
         if (!canvas.getContext) return false;
@@ -1064,6 +1079,43 @@
       const discountCodeEl = document.getElementById("discountCode");
       const prefilledEmailLink = document.getElementById("prefilledEmail");
 
+      const DISCOUNT_CODE_KEY = "madadDiscountCode";
+
+      const storageAdapter = (() => {
+        try {
+          const testKey = "__storage_test__";
+          window.localStorage.setItem(testKey, "1");
+          window.localStorage.removeItem(testKey);
+          return window.localStorage;
+        } catch (error) {
+          return null;
+        }
+      })();
+
+      const getStoredDiscountCode = () => {
+        let code = storageAdapter ? storageAdapter.getItem(DISCOUNT_CODE_KEY) : null;
+        if (code) return code;
+        const cookieMatch = document.cookie
+          .split("; ")
+          .find((row) => row.startsWith(`${DISCOUNT_CODE_KEY}=`));
+        if (cookieMatch) {
+          [, code] = cookieMatch.split("=");
+        }
+        return code || null;
+      };
+
+      const persistDiscountCode = (code) => {
+        if (!code) return;
+        if (storageAdapter) {
+          try {
+            storageAdapter.setItem(DISCOUNT_CODE_KEY, code);
+          } catch (error) {
+            console.warn("Unable to save discount code to storage.", error);
+          }
+        }
+        document.cookie = `${DISCOUNT_CODE_KEY}=${code};path=/;max-age=${60 * 60 * 24 * 180}`;
+      };
+
       const generateDiscountCode = () => {
         const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
         let codeBody = "";
@@ -1078,7 +1130,11 @@
 
       const initDynamicDiscountCode = () => {
         if (!discountCodeEl) return;
-        const code = generateDiscountCode();
+        let code = getStoredDiscountCode();
+        if (!code) {
+          code = generateDiscountCode();
+          persistDiscountCode(code);
+        }
         discountCodeEl.textContent = code;
 
         if (prefilledEmailLink) {
