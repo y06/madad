@@ -63,8 +63,7 @@
       header {
         background: #fff;
         color: var(--text-main);
-        position: sticky;
-        top: 0;
+        position: relative;
         z-index: 10;
         box-shadow: 0 12px 30px rgba(15, 10, 49, 0.08);
       }
@@ -620,7 +619,7 @@
       }
 
       .references-highlight__inner {
-        background: linear-gradient(135deg, #1b1530, #2c2151);
+        background: linear-gradient(135deg, #f8f5fc, #e2d2f2);
         border-radius: 32px;
         padding: 3rem;
         display: grid;
@@ -1115,6 +1114,12 @@
       }
 
       @media (max-width: 640px) {
+        header {
+          position: sticky;
+          top: 0;
+          z-index: 50;
+        }
+
         .logo {
           transition: opacity 0.2s ease, max-width 0.2s ease;
         }
