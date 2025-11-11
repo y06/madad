@@ -216,9 +216,9 @@
               <a
                 class="how-card__action secondary"
                 id="prefilledEmail"
-                data-email-subject="Zľavový kód {CODE}"
-                data-email-body="Dobrý deň,%0A%0AMám záujem o produkt __________ a chcel by som si uplatniť zľavový kód {CODE}.%0A%0AĎakujem."
-                href="mailto:hello@madad.sk"
+                data-email-subject="Darček z Marketing Rulezz - Zľavový kód {CODE}"
+                data-email-body="Dobrý deň,%0A%0AMám záujem o produkt __________ a chcel/chcela by som si uplatniť zľavový kód {CODE}.%0A%0AĎakujem."
+                href="mailto:info@madad.sk"
                 >Odoslať e-mail</a
               >
             </article>
@@ -376,22 +376,23 @@
               <p class="pill">Referencie</p>
               <h2 id="references-title">Pozrite si naše realizácie</h2>
               <p>
-                Od výstavných stánkov až po retailové inštalácie. 100vky a 100vky úspešných projektov,
-                ktoré sme s našimi klientmi postavili. Všetky vznikli 
-                <a class="link" href="https://t3works.sk" target="_blank" rel="noopener">z nášho výstavného systému T3works.</a>
-              </p>
+                Od výstavných stánkov až po retailové inštalácie. Úspešné projekty,
+                ktoré sme s našimi klientmi postavili.
               <div class="references-highlight-cont">
-              <div class="references-highlight__brand">
-                <span>Postavené systémom</span>
-                <img
-                  src="images/logo_t3works_header.svg"
-                  alt="T3works"
-                  width="140"
-                  height="40"
-                  loading="lazy"/>
+                <a class="references-highlight__brand" href="https://t3works.sk" target="_blank" rel="noopener">
+                  <span>Postavené z výstavného systému</span>
+                  <img
+                    src="images/logo_t3works_header.svg"
+                    alt="T3works"
+                    width="140"
+                    height="40"
+                    loading="lazy"
+                  />
+                </a>
+                <a class="references-highlight__btn" href="https://t3works.sk" target="_blank" rel="noopener"
+                  >Zobraziť všetky referencie</a
+                >
               </div>
-              <a class="references-highlight__btn" href="https://t3works.sk" target="_blank" rel="noopener">Zobraziť všetky referencie</a>
-            </div>
             </div>
             <div class="references-highlight__carousel" aria-label="Galéria referencií">
               <button
@@ -751,7 +752,7 @@
           const bodyTemplate = prefilledEmailLink.getAttribute("data-email-body");
           const subject = formatEmailTemplate(subjectTemplate, code);
           const body = formatEmailTemplate(bodyTemplate, code);
-          prefilledEmailLink.href = `mailto:hello@madad.sk?subject=${encodeURIComponent(
+          prefilledEmailLink.href = `mailto:info@madad.sk?subject=${encodeURIComponent(
             subject
           )}&body=${encodeURIComponent(body)}`;
         }
