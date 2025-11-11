@@ -164,7 +164,6 @@
                 📋
               </button>
             </div>
-            <small class="code-note">Platí do 31. 12. 2025.</small>
           </div>
         </section>
 
@@ -178,6 +177,18 @@
               Kód stačí odoslať jedným z dvoch rýchlych spôsobov. Zľavu ti
               nastavíme pri spracovaní objednávky.
             </p>
+            <details class="code-note" id="codeTerms">
+              <summary>Podmienky uplatnenia kódu</summary>
+              <div class="code-note__content">
+                <p>
+                  Zľavový kód nie je možné kombinovať s inými zľavami, akciami ani promo kódmi.
+                  <strong>Zľava platí pri nákupe nad 100 €.</strong><br><br>
+                  Kód je možné použiť iba raz na jednu objednávku.<br>
+                  Zľava sa nevzťahuje na poštovné, balné ani služby ako montáž či grafika.<br><br>
+                  Platnosť kódu od 20. 11. 2025 <strong>do 31. 12. 2025.</strong>
+                </p>
+              </div>
+            </details>
           </div>
           <div class="how-grid">
             <article class="how-card">
@@ -363,18 +374,24 @@
           <div class="references-highlight__inner">
             <div class="references-highlight__content">
               <p class="pill">Referencie</p>
-              <h2 id="references-title">Pozrite si, ako vyzerajú naše realizácie</h2>
+              <h2 id="references-title">Pozrite si naše realizácie</h2>
               <p>
                 Od výstavných stánkov až po retailové inštalácie. 100vky a 100vky úspešných projektov,
-                ktoré sme s našimi klientmi postavili.
+                ktoré sme s našimi klientmi postavili. Všetky vznikli 
+                <a class="link" href="https://t3works.sk" target="_blank" rel="noopener">z nášho výstavného systému T3works.</a>
               </p>
-              <a
-                class="references-highlight__btn"
-                href="https://madad.sk/b/referencie"
-                target="_blank"
-                rel="noopener"
-                >Zobraziť všetky referencie</a
-              >
+              <div class="references-highlight-cont">
+              <div class="references-highlight__brand">
+                <span>Postavené systémom</span>
+                <img
+                  src="images/logo_t3works_header.svg"
+                  alt="T3works"
+                  width="140"
+                  height="40"
+                  loading="lazy"/>
+              </div>
+              <a class="references-highlight__btn" href="https://t3works.sk" target="_blank" rel="noopener">Zobraziť všetky referencie</a>
+            </div>
             </div>
             <div class="references-highlight__carousel" aria-label="Galéria referencií">
               <button
@@ -430,6 +447,46 @@
                 aria-label="Zväčšiť referenciu: Madad showroom"
               >
                 <img src="images/refer/showroom-madad-11-2024-p1.jpg" alt="Madad showroom" loading="lazy" />
+              </button>
+              <button
+                type="button"
+                class="references-highlight__item"
+                data-image="images/refer/liwa-arms-stand-iwa-outdoors-2024-plexi-textile-wall-storage-rifle-p2-2.jpg"
+                data-alt="Liwa Arms stánok na IWA 2024"
+                aria-label="Zväčšiť referenciu: Liwa Arms stánok na IWA 2024"
+              >
+                <img
+                  src="images/refer/liwa-arms-stand-iwa-outdoors-2024-plexi-textile-wall-storage-rifle-p2-2.jpg"
+                  alt="Liwa Arms stánok na IWA 2024"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                type="button"
+                class="references-highlight__item"
+                data-image="images/refer/Microstep-MTWE_2022_Vystava_0005.jpg"
+                data-alt="Microstep MTWE 2022 výstava"
+                aria-label="Zväčšiť referenciu: Microstep MTWE 2022 výstava"
+              >
+                <img src="images/refer/Microstep-MTWE_2022_Vystava_0005.jpg" alt="Microstep MTWE 2022 výstava" loading="lazy" />
+              </button>
+              <button
+                type="button"
+                class="references-highlight__item"
+                data-image="images/refer/xero-shoes-t3works-exhibition-stand-1.jpg"
+                data-alt="Xero Shoes výstavný stánok"
+                aria-label="Zväčšiť referenciu: Xero Shoes výstavný stánok"
+              >
+                <img src="images/refer/xero-shoes-t3works-exhibition-stand-1.jpg" alt="Xero Shoes výstavný stánok" loading="lazy" />
+              </button>
+              <button
+                type="button"
+                class="references-highlight__item"
+                data-image="images/refer/IMG_8985 - Atyp, isadore, Komatex, T3deco.jpg"
+                data-alt="Isadore retail prezentácia"
+                aria-label="Zväčšiť referenciu: Isadore retail prezentácia"
+              >
+                <img src="images/refer/IMG_8985 - Atyp, isadore, Komatex, T3deco.jpg" alt="Isadore retail prezentácia" loading="lazy" />
               </button>
             </div>
           </div>
@@ -630,15 +687,15 @@
           <button class="lightbox__close" type="button" data-lightbox-close aria-label="Zavrieť detail">
             ×
           </button>
+          <button class="lightbox__nav lightbox__nav--prev" type="button" data-lightbox-prev aria-label="Predchádzajúca referencia">
+            ‹
+          </button>
+          <button class="lightbox__nav lightbox__nav--next" type="button" data-lightbox-next aria-label="Nasledujúca referencia">
+            ›
+          </button>
           <img id="lightboxImage" alt="" />
           <p class="lightbox__caption" id="lightboxCaption"></p>
-          <a
-            class="lightbox__cta"
-            href="https://madad.sk/b/referencie"
-            target="_blank"
-            rel="noopener"
-            >Pozrieť všetky referencie</a
-          >
+          <a class="lightbox__cta" href="https://t3works.sk" target="_blank" rel="noopener">Pozrieť všetky referencie</a>
         </div>
       </div>
     </div>
@@ -704,67 +761,124 @@
 
       const copyButtons = document.querySelectorAll("[data-copy-target]");
 
-      copyButtons.forEach((button) => {
-        button.addEventListener("click", async () => {
-          const targetId = button.getAttribute("data-copy-target");
-          const targetEl = document.getElementById(targetId);
-          if (!targetEl) return;
+	      copyButtons.forEach((button) => {
+	        button.addEventListener("click", async () => {
+	          const targetId = button.getAttribute("data-copy-target");
+	          const targetEl = document.getElementById(targetId);
+	          if (!targetEl) return;
 
-          const value = targetEl.textContent.trim();
+	          const value = targetEl.textContent.trim();
 
-          try {
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-              await navigator.clipboard.writeText(value);
-            } else {
-              const tempInput = document.createElement("input");
-              tempInput.value = value;
-              document.body.appendChild(tempInput);
-              tempInput.select();
-              document.execCommand("copy");
-              tempInput.remove();
-            }
-            const defaultLabel = button.getAttribute("data-default-label") || "📋";
-            const copiedLabel = button.getAttribute("data-copied-label") || "✓";
-            button.textContent = copiedLabel;
-            button.classList.add("copied");
-            setTimeout(() => {
-              button.textContent = defaultLabel;
-              button.classList.remove("copied");
-            }, 1800);
-          } catch (error) {
-            console.error("Copy failed", error);
-          }
-        });
-      });
+	          try {
+	            if (navigator.clipboard && navigator.clipboard.writeText) {
+	              await navigator.clipboard.writeText(value);
+	            } else {
+	              const tempInput = document.createElement("input");
+	              tempInput.value = value;
+	              document.body.appendChild(tempInput);
+	              tempInput.select();
+	              document.execCommand("copy");
+	              tempInput.remove();
+	            }
+	            const defaultLabel = button.getAttribute("data-default-label") || "📋";
+	            const copiedLabel = button.getAttribute("data-copied-label") || "✓";
+	            button.textContent = copiedLabel;
+	            button.classList.add("copied");
+	            setTimeout(() => {
+	              button.textContent = defaultLabel;
+	              button.classList.remove("copied");
+	            }, 1800);
+	          } catch (error) {
+	            console.error("Copy failed", error);
+	          }
+	        });
+	      });
 
-      const referenceItems = document.querySelectorAll(".references-highlight__item");
-      const lightbox = document.getElementById("referenceLightbox");
-      const lightboxImage = document.getElementById("lightboxImage");
-      const lightboxCaption = document.getElementById("lightboxCaption");
+	      const referenceCarousel = document.querySelector(".references-highlight__carousel");
 
-      const openLightbox = (src, alt) => {
-        if (!lightbox) return;
-        lightboxImage.src = src;
-        lightboxImage.alt = alt;
-        lightboxCaption.textContent = alt;
-        lightbox.removeAttribute("hidden");
-        document.body.classList.add("lightbox-open");
-      };
+	      const shuffleReferenceItems = () => {
+	        if (!referenceCarousel) return [];
+	        const items = Array.from(referenceCarousel.querySelectorAll(".references-highlight__item"));
+	        for (let i = items.length - 1; i > 0; i -= 1) {
+	          const j = Math.floor(Math.random() * (i + 1));
+	          [items[i], items[j]] = [items[j], items[i]];
+	        }
+	        items.forEach((item, index) => {
+	          referenceCarousel.appendChild(item);
+	          item.setAttribute("data-index", index);
+	        });
+	        return items;
+	      };
 
-      const closeLightbox = () => {
-        if (!lightbox) return;
-        lightbox.setAttribute("hidden", "");
-        lightboxImage.removeAttribute("src");
-        document.body.classList.remove("lightbox-open");
-      };
+	      const referenceItems = shuffleReferenceItems();
+	      const lightbox = document.getElementById("referenceLightbox");
+	      const lightboxImage = document.getElementById("lightboxImage");
+	      const lightboxCaption = document.getElementById("lightboxCaption");
+	      const prevReferenceBtn = document.querySelector("[data-lightbox-prev]");
+	      const nextReferenceBtn = document.querySelector("[data-lightbox-next]");
+	      let currentReferenceIndex = -1;
 
-      referenceItems.forEach((item) => {
-        item.addEventListener("click", () => {
-          const src = item.getAttribute("data-image");
-          const alt = item.getAttribute("data-alt") || "";
-          openLightbox(src, alt);
-        });
-      });
+	      const setLightboxContent = (index) => {
+	        if (!referenceItems.length || index < 0 || index >= referenceItems.length) return;
+	        const item = referenceItems[index];
+	        if (!item || !lightboxImage) return;
+	        const src = item.getAttribute("data-image");
+	        const alt = item.getAttribute("data-alt") || "";
+	        lightboxImage.src = src;
+	        lightboxImage.alt = alt;
+	        if (lightboxCaption) {
+	          lightboxCaption.textContent = alt;
+	        }
+	        currentReferenceIndex = index;
+	      };
+
+	      const openLightbox = (index) => {
+	        if (!lightbox || !referenceItems.length) return;
+	        setLightboxContent(index);
+	        if (currentReferenceIndex === -1) return;
+	        lightbox.removeAttribute("hidden");
+	        document.body.classList.add("lightbox-open");
+	      };
+
+	      const closeLightbox = () => {
+	        if (!lightbox) return;
+	        lightbox.setAttribute("hidden", "");
+	        if (lightboxImage) {
+	          lightboxImage.removeAttribute("src");
+	        }
+	        document.body.classList.remove("lightbox-open");
+	        currentReferenceIndex = -1;
+	      };
+
+	      const showReferenceAtOffset = (offset) => {
+	        if (!referenceItems.length || currentReferenceIndex === -1) return;
+	        const itemCount = referenceItems.length;
+	        const nextIndex = (currentReferenceIndex + offset + itemCount) % itemCount;
+	        setLightboxContent(nextIndex);
+	      };
+
+	      const showNextReference = () => showReferenceAtOffset(1);
+	      const showPrevReference = () => showReferenceAtOffset(-1);
+
+	      referenceItems.forEach((item, index) => {
+	        item.addEventListener("click", () => {
+	          openLightbox(index);
+	        });
+	      });
+
+	      if (prevReferenceBtn) {
+	        prevReferenceBtn.addEventListener("click", (event) => {
+	          event.stopPropagation();
+	          showPrevReference();
+	        });
+	      }
+
+	      if (nextReferenceBtn) {
+	        nextReferenceBtn.addEventListener("click", (event) => {
+	          event.stopPropagation();
+	          showNextReference();
+	        });
+	      }
 
       if (lightbox) {
         lightbox.querySelectorAll("[data-lightbox-close]").forEach((closeEl) => {
@@ -778,12 +892,22 @@
         });
       }
 
-      document.addEventListener("keydown", (event) => {
-        if (!lightbox) return;
-        if (event.key === "Escape" && !lightbox.hasAttribute("hidden")) {
-          closeLightbox();
-        }
-      });
+	      document.addEventListener("keydown", (event) => {
+	        if (!lightbox) return;
+	        const isOpen = !lightbox.hasAttribute("hidden");
+	        if (event.key === "Escape" && isOpen) {
+	          closeLightbox();
+	          return;
+	        }
+	        if (!isOpen) return;
+	        if (event.key === "ArrowRight") {
+	          event.preventDefault();
+	          showNextReference();
+	        } else if (event.key === "ArrowLeft") {
+	          event.preventDefault();
+	          showPrevReference();
+	        }
+	      });
     </script>
   </body>
 </html>

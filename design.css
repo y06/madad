@@ -332,8 +332,75 @@
       }
 
       .code-note {
+        width: 100%;
+        max-width: 680px;
+        margin: 1rem auto 0;
+        padding: 1.25rem 1.6rem;
+        border-radius: 28px;
+        border: 1px solid rgba(129, 121, 222, 0.35);
+        background: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 20px 60px rgba(20, 15, 29, 0.12);
+        backdrop-filter: blur(12px);
         font-size: 0.95rem;
-        opacity: 0.85;
+        color: var(--text-main);
+        text-align: left;
+        transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .code-note[open] {
+        background: rgba(255, 255, 255, 0.95);
+        border-color: rgba(129, 121, 222, 0.55);
+        box-shadow: 0 25px 60px rgba(20, 15, 29, 0.18);
+      }
+
+      .code-note summary {
+        list-style: none;
+        cursor: pointer;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin: 0;
+      }
+
+      .code-note summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .code-note summary::after {
+        content: "+";
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: rgba(129, 121, 222, 0.16);
+        border: 1px solid rgba(129, 121, 222, 0.35);
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #726a8d;
+        flex-shrink: 0;
+      }
+
+      .code-note[open] summary::after {
+        content: "−";
+      }
+
+      .code-note summary:focus-visible {
+        outline: 2px solid rgba(129, 121, 222, 0.55);
+        outline-offset: 6px;
+        border-radius: 999px;
+      }
+
+      .code-note__content {
+        margin-top: 1rem;
+        opacity: 0.92;
+      }
+
+      .code-note__content p {
+        margin: 0;
       }
 
 
@@ -569,15 +636,24 @@
       }
 
       .references-highlight__content p {
-        margin: 0 0 1.5rem;
+        margin: 0 0 0.5rem;
         color: #4a4a4a;
       }
+
+        .references-highlight-cont {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+      }
+
 
       .references-highlight__btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         text-align: center;
+        max-width: 360px;
         padding: 0.85rem 1.6rem;
         border-radius: 999px;
         background: #8179de;
@@ -590,6 +666,20 @@
       .references-highlight__btn:hover {
         transform: translateY(-2px);
         box-shadow: 0 25px 45px rgba(108, 92, 231, 0.35);
+      }
+
+      .references-highlight__brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        font-weight: 600;
+        color: #6c5ce7;
+      }
+
+      .references-highlight__brand img {
+        display: block;
+        height: 34px;
+        width: auto;
       }
 
       .references-highlight__carousel {
@@ -875,6 +965,41 @@
         border-radius: 50%;
         font-size: 1.4rem;
         cursor: pointer;
+      }
+
+      .lightbox__nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(11, 9, 28, 0.75);
+        color: #fff;
+        font-size: 1.4rem;
+        font-weight: 700;
+        cursor: pointer;
+        z-index: 3;
+        transition: background 0.2s ease, transform 0.2s ease;
+      }
+
+      .lightbox__nav:hover {
+        background: rgba(108, 92, 231, 0.9);
+        transform: translateY(-50%) scale(1.05);
+      }
+
+      .lightbox__nav:focus-visible {
+        outline: 2px solid rgba(108, 92, 231, 0.9);
+        outline-offset: 3px;
+      }
+
+      .lightbox__nav--prev {
+        left: 0.75rem;
+      }
+
+      .lightbox__nav--next {
+        right: 0.75rem;
       }
 
       .lightbox__caption {
